@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d16">
+  <title>Galactic Frontline — Battle for the Outer Rim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Galactic Frontline home"><span class="brand-mark">✦</span><span>GALACTIC <b>FRONTLINE</b></span></a>
+      <div class="season-tag"><span></span> OUTER RIM • SECTOR 07</div>
+      <div class="top-actions"><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button><button class="icon-btn" id="pauseBtn" aria-label="Pause match">Ⅱ</button><div class="pilot"><span class="pilot-avatar">✦</span><span><b>ROGUE SQUAD</b><small>COMMANDER • LVL 08</small></span></div></div>
+    </header>
+    <section class="match-layout">
+      <aside class="side-panel left-panel">
+        <div class="panel-kicker">LIVE MATCH <span class="live-dot"></span></div>
+        <div class="player-card"><div class="player-avatar rebel">✦</div><div><b>ROGUE SQUAD</b><small>REBEL ALLIANCE</small></div><strong id="playerCrowns">0</strong></div>
+        <div class="vs-divider"><span></span><b>VS</b><span></span></div>
+        <div class="player-card opponent"><div class="player-avatar empire">◈</div><div><b>IMPERIAL ACE</b><small>GALACTIC EMPIRE</small></div><strong id="enemyCrowns">0</strong></div>
+        <div class="objective-box"><div class="objective-icon">⌖</div><div><b>MISSION BRIEF</b><p>Destroy the enemy <em>Command Post</em> before the clock runs out.</p></div></div>
+        <div class="tips-box"><span>TACTICAL TIP</span><p id="tipText">Deploy units on your side of the river. Build a balanced squad to counter the Empire.</p></div>
+      </aside>
+      <section class="battle-column">
+        <div class="arena-wrap" id="arenaWrap">
+          <div class="arena-head"><div class="arena-name"><span class="planet-icon">◉</span><span><b>GEONOSIS CANYON</b><small>CONTESTED TERRITORY</small></span></div><div class="match-clock"><small id="phaseLabel">BATTLE IN PROGRESS</small><strong id="timer">3:00</strong></div><div class="opponent-mini"><span class="enemy-mini-avatar">◈</span><span><b>IMPERIAL ACE</b><small>LVL 08 • EMPIRE</small></span></div></div>
+          <div class="canvas-box"><canvas id="battlefield" aria-label="Battle arena. Select a unit card, then click your side of the battlefield to deploy it."></canvas><div class="arena-hint" id="arenaHint"><span>⌖</span> SELECT A UNIT · DEPLOY ON YOUR SIDE</div><div class="toast" id="toast" role="status"></div><div class="pause-overlay" id="pauseOverlay"><div><span>Ⅱ</span><b>PAUSED</b><small>Take a breath, Commander.</small><button id="resumeBtn">RESUME BATTLE</button></div></div></div>
+          <div class="arena-foot"><div><span class="online-dot"></span> LIVE BATTLE</div><span>DEPLOY UNITS BELOW THE RIVER</span><div class="ping">◉ &nbsp; 24 MS</div></div>
+        </div>
+        <div class="command-bar">
+          <div class="energy-wrap"><div class="energy-top"><div><span class="energy-symbol">✦</span><b>FORCE</b><small>ENERGY</small></div><strong><span id="energyValue">5</span><small> / 10</small></strong></div><div class="energy-track"><div id="energyFill"></div><div class="energy-ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="energy-note"><span id="energyRate">+1 every 2.8 sec</span><span>REGENERATING</span></div></div>
+          <div class="deck-area"><div class="deck-label"><span>YOUR SQUAD</span><small>SELECT A UNIT TO DEPLOY</small></div><div class="card-row" id="cardRow"></div></div>
+          <div class="next-slot"><span>NEXT</span><div class="next-card-preview" id="nextCard"></div></div>
+        </div>
+        <div class="footnote"><span>◈</span> QUICK DEPLOY: SELECT A CARD, THEN TAP YOUR SIDE OF THE ARENA</div>
+      </section>
+      <aside class="side-panel right-panel"><div class="intel-title"><span>◉</span> BATTLE INTEL</div><div class="stat-box"><span>TIME ELAPSED</span><strong id="elapsed">00:00</strong></div><div class="stat-box"><span>UNITS DEPLOYED</span><strong id="unitsDeployed">00</strong></div><div class="stat-box"><span>SECTOR CONTROL</span><div class="control-track"><i id="controlFill"></i></div><small id="controlText">EVENLY MATCHED</small></div><div class="log-title">COMBAT FEED <span>LIVE</span></div><div class="combat-feed" id="combatFeed"><div class="feed-item start"><i>✦</i><span>Squad deployed. Awaiting your orders, Commander.</span><time>NOW</time></div></div><div class="side-bottom"><div class="callout"><span>✦</span><p><b>THE FORCE IS WITH YOU</b><small>Victory goes to the commander who adapts.</small></p></div><button class="concede-btn" id="concedeBtn">⚑ &nbsp; CONCEDE MATCH</button></div></aside>
+    </section>
+    <footer class="page-footer"><span>GALACTIC FRONTLINE <i>•</i> FAN-MADE TACTICAL ARENA</span><span>FOR THE REBELLION <b>✦</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
